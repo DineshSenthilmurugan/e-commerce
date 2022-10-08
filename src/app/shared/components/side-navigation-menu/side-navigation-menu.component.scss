@@ -1,0 +1,29 @@
+:host {
+    ::ng-deep .mat-list-item {
+        cursor: pointer;
+        height: 50px !important;
+        & .mat-icon {
+            color: var(--selected-disabled-button-color);
+        }
+        &:hover, &.active {
+            background-color: var(--app-primary-50);
+            color: var(--primary-color);
+            & .mat-icon {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .logo {
+        padding: 01px 24px 16px 24px;
+        img {
+            width: 100px;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+    }
+}

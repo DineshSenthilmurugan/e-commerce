@@ -1,0 +1,115 @@
+// spacing margin and padding
+$spaceamounts: (0, 2, 4, 8, 16, 24, 32, 48, 64, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$spacingmodifiers: (
+    'ma': margin,
+    'mx': margin,
+    'my': margin,
+    'mt': margin-top,
+    'mr': margin-right,
+    'mb': margin-bottom,
+    'ml': margin-left,
+    'pa': padding,
+    'px': padding,
+    'py': padding,
+    'pt': padding-top,
+    'pr': padding-right,
+    'pb': padding-bottom,
+    'pl': padding-left,
+);
+
+@mixin create-spacing-classes($modifier, $value) {
+    @each $val in $spaceamounts {
+        @if ($modifier == 'mx' or $modifier == 'px') {
+            .#{$modifier}-#{$val} {
+                #{$value}: 0 #{$val}px !important;
+            }
+        } @else if ($modifier == 'my' or $modifier == 'py') {
+            .#{$modifier}-#{$val} {
+                #{$value}: #{$val}px 0 !important;
+            }
+        } @else {
+            .#{$modifier}-#{$val} {
+                #{$value}: #{$val}px !important;
+            }
+        }
+    }
+}
+
+@each $modifier, $value in $spacingmodifiers {
+    @include create-spacing-classes($modifier, $value);
+}
+
+// test-align
+$alignType: (left, right, center);
+
+@each $value in $alignType {
+    .#{$value} {
+        text-align: $value;
+    }
+}
+
+// font-size
+$fontValue: (large, larger, medium, small, smaller, x-large, x-small, xx-large, xx-small);
+@each $val in $fontValue {
+    .fontSize-#{$val} {
+        font-size: $val;
+    }
+}
+
+// width and height
+$size: (
+    '50': 50px,
+    '100': 100px,
+    '200': 200px,
+    '250': 250px,
+    '300': 300px,
+    '400': 400px,
+    '500': 500px,
+    '600': 600px,
+    '700': 700px,
+    'p25': 25%,
+    'p40': 40%,
+    'p50': 50%,
+    'p75': 75%,
+    'p100': 100%,
+);
+@each $modifier, $value in $size {
+    .w-#{$modifier} {
+        width: $value;
+    }
+    .h-#{$modifier} {
+        height: $value;
+    }
+}
+
+@mixin generateColors($prefix, $palette) {
+    $colors-map: ();
+  
+    @each $key, $value in $palette {
+      @if $key != contrast {
+        // .app-#{$prefix}-#{$key} {
+        //   color: map-get($palette, $key);
+        // }
+  
+      $map: ();
+      $map: map-merge($map, ($key: $value));
+      $colors-map: map-merge($colors-map, $map);
+      }
+    }
+
+    @each $key, $value in $colors-map {
+        .color-#{$prefix}-#{$key} {
+            color: #{$value};
+        }
+        .bg-#{$prefix}-#{$key} {
+            background-color: #{$value};
+        }
+    }
+
+    :root {
+      @each $key, $value in $colors-map {
+        --app-#{$prefix}-#{$key}: #{$value};
+      }
+    }
+  }
+

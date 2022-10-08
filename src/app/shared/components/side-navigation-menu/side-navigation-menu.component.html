@@ -1,0 +1,39 @@
+<section>
+    <div fxLayout="column">
+        <div class="logo" fxLayout="column">
+            <img alt="logo" height="40" src="https://www.bobsguide.com/wp-content/uploads/2021/05/maveric-logo-360x180-1.png" />
+            <span class="title">Ecommerce</span>
+        </div>
+    </div>
+    <mat-list>
+        <div mat-subheader>MENU</div>
+        <mat-list-item [ngClass]="{'active': this.routerPath === '/catalogue'}" (click)="navigate('/catalogue')">
+            <mat-icon mat-list-icon>shopping_bag</mat-icon>
+            <div mat-line>Buy</div>
+        </mat-list-item>
+        <mat-list-item [ngClass]="{'active': this.routerPath === '/sell'}" (click)="navigate('/sell')">
+            <mat-icon mat-list-icon>shopping_bag</mat-icon>
+            <div mat-line>Sell</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <div mat-subheader>PERSONALIZATION</div>
+        <mat-list-item>
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <div mat-line>Profile</div>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon mat-list-icon>all_inbox</mat-icon>
+            <div mat-line>Join Mail List</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <div mat-subheader>Settings</div>
+        <mat-list-item>
+            <mat-icon mat-list-icon>settings</mat-icon>
+            <div mat-line>Settings</div>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon mat-list-icon>help</mat-icon>
+            <div mat-line>Help</div>
+        </mat-list-item>
+    </mat-list>
+</section>

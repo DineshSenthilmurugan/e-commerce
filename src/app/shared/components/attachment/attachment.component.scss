@@ -1,0 +1,48 @@
+:host {
+    .attachment-container {
+        ngx-dropzone {
+            height: unset !important;
+            align-items: unset !important;
+            flex-direction: column !important;
+            //border: 0px solid !important;
+            &:hover {
+                border: 2px dotted var(--primary-color);
+            }
+            ngx-dropzone-label {
+                margin: 15px auto !important;
+                a {
+                    color: var(--primary-color);
+                    font-weight: 400;
+                }
+            }
+
+            .file-card {
+                &:hover {
+                    background-color: var(--disabled-button-toggle-color);
+                    border-radius: 5px;
+                }
+                & div:first-child {
+                    border: 1px solid var(--divider-color);
+                    border-radius: 5px;
+                    img {
+                        height: 100px;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                & div:last-child {
+                    padding: 3px;
+                    a {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: var(--primary-color);
+                    }
+                    & div {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

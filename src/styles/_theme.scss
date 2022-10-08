@@ -1,0 +1,113 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+@include mat-core();
+
+// Theme contrast color
+$dark: rgba(black, 0.87);
+$light: rgba(white, 0.87);
+$strong-light: rgb(255, 255, 255);
+
+// Theme color map
+$royalBlue: (
+    50: #e0eaf3,
+    100: #b3cbe1,
+    200: #80a9ce,
+    300: #4d87ba,
+    400: #266dab,
+    500: #00539c,
+    600: #004c94,
+    700: #00428a,
+    800: #003980,
+    900: #00296e,
+    A100: #9db9ff,
+    A200: #6a95ff,
+    A400: #3770ff,
+    A700: #1e5eff,
+    contrast: (
+        50: $dark,
+        100: $dark,
+        200: $dark,
+        300: $strong-light,
+        400: $strong-light,
+        500: $light,
+        // default
+        600: $light,
+        // default
+        700: $light,
+        // default
+        800: $light,
+        // default
+        900: $light,
+        // default
+        A100: $dark,
+        A200: $light,
+        // default
+        A400: $light,
+        // default
+        A700: $light,
+    ),
+);
+
+$peach: (
+    50: #fdf4f0,
+    100: #fae4d9,
+    200: #f7d2bf,
+    300: #f3bfa5,
+    400: #f1b292,
+    500: #eea47f,
+    600: #ec9c77,
+    700: #e9926c,
+    800: #e78962,
+    900: #e2784f,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffe3d9,
+    A700: #ffd0bf,
+    contrast: (
+        50: $dark,
+        100: $dark,
+        200: $dark,
+        300: $strong-light,
+        400: $strong-light,
+        500: $light,
+        // default
+        600: $light,
+        // default
+        700: $light,
+        // default
+        800: $light,
+        // default
+        900: $light,
+        // default
+        A100: $dark,
+        A200: $light,
+        // default
+        A400: $light,
+        // default
+        A700: $light,
+    ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$theming-material-components-primary: mat-palette($royalBlue);
+$theming-material-components-accent: mat-palette($peach);
+// The warn palette is optional (defaults to red).
+
+$theming-material-components-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+
+$theme: mat-light-theme(
+    $theming-material-components-primary,
+    $theming-material-components-accent,
+    $theming-material-components-warn
+);
+
+
+
+.light-theme {
+    @include angular-material-theme($theme);
+}

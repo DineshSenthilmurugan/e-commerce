@@ -1,0 +1,47 @@
+<div class="attachment-container">
+    <!-- <div class="h-50 file-drop-zone" fxLayout="row" fxLayoutAlign="center center">
+        <span>
+            <mat-icon></mat-icon>
+            Drop files to attach, or
+            <a href="">browse</a>
+        </span>
+    </div> -->
+    <ngx-dropzone
+        [multiple]="multiple"
+        [accept]="accept"
+        [maxFileSize]="maxFileSize"
+        [disabled]="disabled"
+        [processDirectoryDrop]="processDirectoryDrop"
+        (change)="onSelect($event)"
+        class="h-50"
+        #filedrop
+    >
+        <ngx-dropzone-label fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon class="mr-10 material-icons-outlined">cloud_upload</mat-icon>
+            Drop files to attach, or
+            <a class="ml-5 browser-link" (click)="filedrop.showFileSelector()" href="javascript:void()">browse</a>
+        </ngx-dropzone-label>
+        <div fxLayout="row" *ngIf="files.length > 0">
+            <mat-grid-list class="w-p100" cols="3" [gutterSize]="'10px'">
+                <mat-grid-tile *ngFor="let file of [1, 2, 3, 4, 5, 6, 7, 8, 9]" [colspan]="'1'" [rowspan]="'1'">
+                    <div fxLayout="column" class="file-card">
+                        <div>
+                            <img
+                                class="w-p100"
+                                alt="attachment image"
+                                src="https://www.jobsoid.com/wp-content/uploads/2019/01/Importance-of-a-strong-recruitment-process-640x480.png"
+                            />
+                        </div>
+                        <div>
+                            <a title="tile of the file name is given here" href="">file name.png</a>
+                            <div fxLayout="row">
+                                <span fxFlex>01/june/2022 10:45 AM</span>
+                                <span>128kb</span>
+                            </div>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </ngx-dropzone>
+</div>

@@ -1,0 +1,54 @@
+:host {
+    .mat-toolbar-multiple-rows {
+        min-height: 56px;
+        position: sticky;
+        z-index: 2;
+        top: 0;
+        background-color: var(--app-primary-50);
+        .mat-toolbar-row {
+            height: 56px;
+            font-size: 16px;
+            line-height: 56px;
+
+            img {
+                margin-bottom: 10px;
+            }
+            span {
+               color: var(--primary-color); 
+               font-weight: 600;
+            }
+
+            .profile-icon {
+                width: 35px;
+                height: 35px;
+                &:hover{
+                    background-color: var(--app-primary-50);
+                    border-radius: 50%;
+                }
+                span {
+                    background-color: var(--accent-color);
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: x-small;
+                    font-weight: 500;
+                    color: white;
+                }
+            }
+
+            .notification {
+                color: var(--status-bar-color);
+            }
+
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper{
+                margin: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+}

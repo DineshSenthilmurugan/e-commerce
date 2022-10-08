@@ -1,0 +1,39 @@
+<ng-template [ngIf]="isHeaderRequired">
+    <mat-toolbar class="mat-elevation-z0">
+        <mat-toolbar-row>
+            <!-- <img alt="logo" height="40" src="https://www.bobsguide.com/wp-content/uploads/2021/05/maveric-logo-360x180-1.png" />
+            <span class="ml-8">Ecommerce</span> -->
+            <span class="spacer"></span> 
+            <mat-form-field appearance="outline" class="without-label w-p40">
+                <input type="text"
+                placeholder="Seach by product name"
+                aria-label="Number"
+                matInput
+                (keyup)="onProductSearch($event)"
+                [formControl]="myControl"
+                [matAutocomplete]="auto">
+                <mat-autocomplete [displayWith]="displayName" autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option (click)="onSearchSelection(option)" *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option.title}}
+                </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <span class="spacer"></span>
+            <button mat-icon-button class="notification mr-16" aria-label="notification">
+                <mat-icon matBadge="15" matBadgeColor="warn" matBadgeSize="small">circle_notifications</mat-icon>
+            </button>
+            <span fxLayout fxLayoutAlign="center center" class="profile-icon" >
+                <span fxLayout fxLayoutAlign="center center">DI</span>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</ng-template>
+
+<!-- <mat-menu class="profile-menu" #profileMenu="matMenu" yPosition="above">
+  <div fxLayout="column">
+    <div fxLayout="column" class="profile-info bg-primary-500">
+        <div fxLayoutAlign="end" class="pr-8 pt-8"><mat-icon aria-hidden="false" aria-label="close icon">close</mat-icon></div> 
+        <div>fgsdgsdf</div> 
+    </div>
+  </div>
+</mat-menu> -->
