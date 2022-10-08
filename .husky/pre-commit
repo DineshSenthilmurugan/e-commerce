@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+# export PATH=$(pwd)/node:$PATH
+# export PATH=$(pwd)/node/pnpm:$PATH
+
+# pnpm lint-staged
