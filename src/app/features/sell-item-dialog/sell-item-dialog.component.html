@@ -1,0 +1,67 @@
+<header mat-dialog-title fxLayout fxLayoutAlign="flex-start">
+    <div fxLayout="column">
+        <h1>Sell Item</h1>
+        <!-- <span class="steps">STEP 1 OF 2</span> -->
+        <p class="mt-8">Sell an item through Maveric's ecommerce platform by adding  the following  information  for the buyer to view and place bid</p>
+    </div>
+    <span fxFlex></span>
+    <div>
+        <span class="close-icon right" fxLayout fxLayoutAlign="center center">
+            <mat-icon (click)="closeDialog()" color="primary">close</mat-icon>
+        </span>
+    </div>
+</header>
+<!-- <mat-divider></mat-divider> -->
+<form [formGroup]="sellItemForm"  (ngSubmit)='onAddingItem()'>
+<div mat-dialog-content fxLayout="column" class="pt-16 pb-48 ma-0 sell-item-form" >
+    <div fxFlex fxLayout="column">
+        <label class="mb-4">Catalogue</label>
+        <mat-form-field fxFlex class="without-label" appearance="outline" color="primary">
+            <mat-select required formControlName="category">
+                <mat-option *ngFor="let catalogue of catalogueList$ | async" [value]="catalogue?._id">{{ catalogue?.title }}</mat-option>
+            </mat-select>
+            <mat-error class="right" *ngIf="sellItemForm.get('category')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="column">
+        <label class="mb-4">ITEM NAME</label>
+        <mat-form-field fxFlex class="without-label" appearance="outline" color="primary">
+            <input matInput formControlName="title" required />
+            <mat-error class="right" *ngIf="sellItemForm.get('title')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="column">
+        <label class="mb-4">DESCRIPTION</label>
+        <mat-form-field fxFlex class="without-label" appearance="outline" color="primary">
+            <textarea matInput formControlName="description" required ></textarea>
+            <mat-error class="right" *ngIf="sellItemForm.get('description')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+        <!-- <div fxFlex="50" class="mb-24">
+            <app-text-editor formControlName="description"></app-text-editor>
+        </div> -->
+    </div>
+    <div fxFlex fxLayout="column">
+        <label class="mb-4">YOUR PRICE</label>
+        <mat-form-field fxFlex class="without-label" appearance="outline" color="primary">
+            <input matInput required formControlName="price"/>
+            <mat-error class="right" *ngIf="sellItemForm.get('price')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="column">
+        <label class="mb-4">NO OF UNITS</label>
+        <mat-form-field fxFlex class="without-label" appearance="outline" color="primary">
+            <input matInput formControlName="numberOfUnitsAvailable" required />
+            <mat-error class="right" *ngIf="sellItemForm.get('numberOfUnitsAvailable')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+    </div>
+    <div fxFlex fxLayout="column">
+        <label class="mb-4">IMAGES</label>
+        <app-attachment></app-attachment>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<footer class="ma-0 pa-0 pr-24" fxLayout="row" fxLayoutAlign="flex-end center" mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" type="submit">Place Ad</button>
+</footer>
+</form>

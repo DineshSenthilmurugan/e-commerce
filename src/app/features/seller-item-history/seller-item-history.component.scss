@@ -1,0 +1,32 @@
+    .sub-header {
+        padding: 10px 24px 30px 24px;
+       // background-color: var(--primary-color);
+       background-image: linear-gradient(to left,  var(--app-primary-400), var(--primary-color));
+        .row1 {
+            h1 {
+                color: white;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .time {
+                color: white;
+                font-size: 12px;
+            }
+        }
+
+        .row2 {
+            p {
+                color: white;
+                font-size: 14px;
+                padding: 0px 350px 10px 0px;
+            }
+            .sell-btn {
+                background-color: white;
+                line-height: 26px !important;
+                padding: 0 10px !important;
+            }
+        }
+
+
+    }

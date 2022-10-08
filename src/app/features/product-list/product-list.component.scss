@@ -1,0 +1,21 @@
+.mat-card{
+    cursor: pointer;
+    border: 1px solid var(--hover-color);
+    img {
+        width: 100%;
+    }
+}
+
+  .card-content {
+    padding: 10px;
+    span {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    label {
+        color: var(--secondary-text-color);
+    }
+  }
+
+  .mat-paginator{ background-color: transparent !important;}

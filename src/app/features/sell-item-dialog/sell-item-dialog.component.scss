@@ -1,0 +1,64 @@
+header {
+   // height: 55px;
+    padding: 24px 24px 15px 24px;
+    font-weight: 400;
+    margin: 0 !important;
+    font: inherit !important;
+    h1 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: -0.008em;
+        text-transform: none;
+    }
+    .close-icon {
+        width: 25px;
+        height: 25px;
+        background: var(--app-primary-50);
+        border-radius: 50%;
+        cursor: pointer;
+        ::ng-deep .mat-icon {
+            width: 20px !important;
+            height: 20px !important;
+            font-size: 20px !important;
+            color: var(--primary-color);
+        }
+    }
+
+    .steps {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--secondary-text-color);
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        color: black;
+    }
+}
+
+.sell-item-form {
+    background-color: var(--hover-color);
+}
+
+::ng-deep .NgxEditor {
+    height: 100px !important;
+}
+
+textarea{
+    height: 150px;
+}
+
+
+
+label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+}
+.mat-flat-button {
+    line-height: 32px !important;
+}
+
+//}
