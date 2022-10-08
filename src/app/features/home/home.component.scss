@@ -1,0 +1,85 @@
+main {
+    grid-template-columns: minmax(min-content, 100%);
+    display: grid;
+    justify-content: center;
+    .home-title {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+    .home-grid {
+        grid-template-columns: repeat(4, minmax(auto, 309px));
+        grid-template-rows: 1fr;
+        display: grid;
+        grid-gap: 16px;
+        justify-content: center;
+        align-items: stretch;
+        .home-card {
+            text-decoration: none;
+            background-color: var(--card-color);
+            border: 1px solid transparent;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 14%), 0 0 2px rgb(0 0 0 / 12%);
+            padding: 1px;
+            border-radius: 4px;
+            outline: none !important;
+            box-sizing: border-box;
+
+            &:hover {
+                text-decoration: none;
+                background: var(--hover-color);
+                box-shadow: 0 4px 8px rgb(0 0 0 / 14%), 0 0 2px rgb(0 0 0 / 12%);
+            }
+
+            .tile-image {
+                margin: auto;
+                height: 110px;
+                width: 140px;
+                img {
+                    height: 110px;
+                    width: 140px;
+                }
+            }
+            .card-title {
+                font-size: 16px;
+                color: var(--base-color);
+                line-height: 22px;
+                padding: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.sub-header {
+    padding: 10px 24px 30px 24px;
+   // background-color: var(--primary-color);
+   background-image: linear-gradient(to left,  var(--app-primary-400), var(--primary-color));
+    .row1 {
+        h1 {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .time {
+            color: white;
+            font-size: 12px;
+        }
+    }
+
+    .row2 {
+        p {
+            color: white;
+            font-size: 14px;
+            padding: 0px 350px 10px 0px;
+        }
+        .sell-btn {
+            background-color: white;
+            line-height: 26px !important;
+            padding: 0 10px !important;
+        }
+    }
+
+
+}

@@ -1,0 +1,22 @@
+<mat-drawer-container class="drawer-main-container">
+    <mat-drawer [ngStyle]="{ 'width': sideNavWidth }" #sideNav disableClose mode="over" opened="false" [position]="'end'">
+        <ng-container [ngSwitch]="componentToOpen">
+        </ng-container>
+    </mat-drawer>
+    <mat-drawer-content>
+       
+        <!-- left side drawer for side menu-->
+        <mat-drawer-container [hasBackdrop]="false">
+            <mat-drawer class="w-250" #sideMenu disableClose mode="side" [opened]="!toggleSideNav" [position]="'start'">
+                <app-side-navigation-menu></app-side-navigation-menu>
+            </mat-drawer>
+            <mat-drawer-content [ngClass]="{'toggleSideNav': !toggleSideNav}" style="margin-left: 0 !important;" class="scrollable-content"> 
+                <div class="pa-0 ma-0">
+                    <app-header></app-header>
+                    <mat-divider></mat-divider>
+                    <router-outlet></router-outlet>
+                </div>  
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </mat-drawer-content>
+</mat-drawer-container>

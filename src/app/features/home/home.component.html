@@ -1,0 +1,41 @@
+<main>
+<div class="sub-header" fxLayout="column">
+    <div fxLayout class="row1">
+        <h1>Buy</h1>
+        <span fxFlex></span>
+        <span class="time">Last Login:[Today] 08 Oct, 2022 @ 2:45</span>
+    </div>
+    <div fxLayout class="row2 mt-24">
+        <p>Look at the catalogue and buy any product of your requirement. All sellers are verified by the platform and adhere to strict policies. Place a bid once you are ready to negotiate</p>
+        <span fxFlex></span>
+        <span>
+            <!-- <button (click)="onSellClick()" class="sell-btn" mat-stroked-button color="primary">
+                <mat-icon>add</mat-icon>
+                Sell Item
+            </button> -->
+        </span>
+    </div>
+</div>
+<div class="pa-40 p" *ngIf="{
+    catalogueList: catalogueList$ | async
+} as obervable">
+    <!-- <p class="home-title mb-32">Hi Dinesh, see what more you can get from our catalogue.</p> -->
+    
+    <div class="home-grid">
+        <a class="home-card" *ngFor="let catalogue of obervable.catalogueList" routerLink="/product/{{catalogue._id}}">
+            <div class="tile-image">
+                <img
+                    alt="card-dashboard-image"
+                    src="https://www.bobsguide.com/wp-content/uploads/2021/05/maveric-logo-360x180-1.png"
+                />
+            </div>
+            <mat-divider></mat-divider>
+            <p class="card-title center ma-0">{{ catalogue?.title }}</p>
+        </a>
+    </div>
+
+    <div fxLayout fxLayoutAlign="center center" class="mt-24" *ngIf="obervable.catalogueList?.length === 0">
+        <img alt="no data" width="500" src="https://cdn.dribbble.com/userupload/2905353/file/original-2022966da1fc3718d3feddfdc471ae47.png" />
+    </div>
+    </div>
+</main>

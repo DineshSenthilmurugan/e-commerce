@@ -1,0 +1,25 @@
+<form fxLayout="column" style="font-size: 12px">
+    <img
+        class="w-200"
+        src="https://www.bobsguide.com/wp-content/uploads/2021/05/maveric-logo-360x180-1.png"
+        alt="logo"
+    />
+    <h1 class="heading mb-24 left">Log In</h1>
+    <mat-form-field appearance="outline" color="primary">
+        <mat-label>Email</mat-label>
+        <input matInput required />
+        <mat-error>Enter a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput required />
+    </mat-form-field>
+    <button mat-flat-button class="pa-4" color="primary">LOG IN</button>
+    <div class="mt-8 fontSize-medium" fxFlex fxLayoutAlign="space-between">
+        <a routerLink="/member/password-reset">Forgot Password</a>
+        <span>
+            <span class="mr-8">Not yet?</span>
+            <a routerLink="/member/email">Register Here</a>
+        </span>
+    </div>
+</form>
